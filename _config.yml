@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Ilias Mansouri"
 title_separator          : "-"
-name                     : "Ilias Mansouri"
+name                     : "Ilias"
 description              : "My project"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -99,7 +99,7 @@ analytics:
 author:
   name             : "Ilias Mansouri"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Geeky hooman passionated about everything Deep Learning related"
+  bio              : "Geeky hooman passionated about everything Deep Learning related."
   location         : "Brussels, Belgium"
   email            :
   uri              :
