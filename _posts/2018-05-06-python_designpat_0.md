@@ -70,11 +70,11 @@ if __name__ == "__main__":
 {% endhighlight %}
 
 
-A bit more happening in here. The __init__ method is a way to define attributes right after creation of an instance. Moreover, the __init__() method is called automatically when you create an instance and thus you will never have to call this method .
+A bit more happening in here. The __init__ method is a way to define attributes right after creation of an instance. Moreover, the __init__() method is called automatically when you create an instance and thus you will never have to call this method.
 
-Internally Python will replace the 'self' with the correct instance. The 'self' variable is needed to id every unique instance of a class. If you simply 'Class.attribute = val' and you have multiple instances of this Class, there would be no way for Python to know which instance of the Class you want to instantiate.
+Internally Python will replace the 'self' with the correct instance. The *self* variable is needed to id every unique instance of a class. If you simply *Class.attribute = val* and you have multiple instances of this Class, there would be no way for Python to know which instance of the Class you want to instantiate.
 
-The '__dict__' is a neat trick to inspect an instance's attribute.
+The __dict__ is a neat trick to inspect an instance's attribute.
 
 ### Class Attributes
 
