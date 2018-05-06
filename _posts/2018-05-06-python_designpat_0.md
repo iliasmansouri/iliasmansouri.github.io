@@ -26,14 +26,15 @@ if __name__ == "__main__":
 
 Easy, yah? You could even create a reference to cup like this:
 
-'''python
-    class Coffee:
-      pass
+{% highlight python %}
+class Coffee:
+  pass
 
-    if __name__ == "__main__":
-      cup = Coffee()
-      c = cup
-'''
+if __name__ == "__main__":
+  cup = Coffee()
+  c = cup
+{% endhighlight %}
+
 
 No need for seeing stars C-style. The pass statement is just an easy way to create an empty class without Python raining them errors over you.
 
@@ -42,30 +43,32 @@ Attributes simply are *properties* of a Class. Hence, attributes are creates wit
 
 You could create attributes as following:
 
-'''python
-    class Coffee:
-      pass
+{% highlight python %}
+class Coffee:
+  pass
 
-    if __name__ == "__main__":
-      cup = Coffee()
-      cup.brew = "Ethopian"
-'''
+if __name__ == "__main__":
+  cup = Coffee()
+  cup.brew = "Ethopian"
+{% endhighlight %}
+
 
 This is not considered as good practice and thus should be avoided.
 
 ### Instance Attributes
 As mentioned earlier, attributes are defined within it's respective class. If you are just learning the basics in python I strongly recommend to not learn the quick-and-dirty approach. Starting from next blog, we will start delving into Design Patterns which will force you to be a smexy programmer. Resisting will only cause in loss of hair, life and perhaps even teeth. And just admits its... You'd like to be smexy, don't you?
 
-'''python
-    class Child:
-        def __init__(self,name,age):
-            self.name = name
-            self.age = age
+{% highlight python %}
+class Child:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
 
-    if __name__ == "__main__":
-      c = Child("Ilias",44)
-      c.__dict__
-'''
+if __name__ == "__main__":
+  c = Child("Ilias",44)
+  c.__dict__
+{% endhighlight %}
+
 
 A bit more happening in here. The __init__ method is a way to define attributes right after creation of an instance. Moreover, the __init__() method is called automatically when you create an instance and thus you will never have to call this method .
 
