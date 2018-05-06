@@ -15,8 +15,7 @@ Now let's get practical, shall we?
 # Classes in Python
 First of all: everything is a class in Python. Yup, that's right. Everything. Functions, methods, lists or floats. So, how easy is it to further enlarge the classy realm?
 
-'''
-  python
+'''python
     class Coffee:
       pass
 
@@ -26,8 +25,7 @@ First of all: everything is a class in Python. Yup, that's right. Everything. Fu
 
 Easy, yah? You could even create a reference to cup like this:
 
-'''
-  python
+'''python
     class Coffee:
       pass
 
@@ -43,8 +41,7 @@ Attributes simply are *properties* of a Class. Hence, attributes are creates wit
 
 You could create attributes as following:
 
-'''
-  python
+'''python
     class Coffee:
       pass
 
@@ -58,8 +55,7 @@ This is not considered as good practice and thus should be avoided.
 ### Instance Attributes
 As mentioned earlier, attributes are defined within it's respective class. If you are just learning the basics in python I strongly recommend to not learn the quick-and-dirty approach. Starting from next blog, we will start delving into Design Patterns which will force you to be a smexy programmer. Resisting will only cause in loss of hair, life and perhaps even teeth. And just admits its... You'd like to be smexy, don't you?
 
-'''
-  python
+'''python
     class Child:
         def __init__(self,name,age):
             self.name = name
