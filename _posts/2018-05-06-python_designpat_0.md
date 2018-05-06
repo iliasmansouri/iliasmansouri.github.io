@@ -16,11 +16,11 @@ Now let's get practical, shall we?
 First of all: everything is a class in Python. Yup, that's right. Everything. Functions, methods, lists or floats. So, how easy is it to further enlarge the classy realm?
 
 {% highlight python %}
-    class Coffee:
-      pass
+class Coffee:
+  pass
 
-    if __name__ == "__main__":
-      cup = Coffee()
+if __name__ == "__main__":
+  cup = Coffee()
 {% endhighlight %}
 
 
