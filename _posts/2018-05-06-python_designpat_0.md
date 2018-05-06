@@ -77,7 +77,22 @@ Internally Python will replace the 'self' with the correct instance. The *self* 
 The __dict__ is a neat trick to inspect an instance's attribute.
 
 ### Class Attributes
+Instance attributes are unique for each instance of a class while Class Attributes are parameters which are identical to all instances of a class. Below, we can see that every Child created has the Hooman characteristic but has their name and age attributes.
 
-# Instance & Instantiation
+{% highlight python %}
+class Child:
+    characteristic = "Hooman"
 
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+if __name__ == "__main__":
+  c = Child("Ilias",44)
+  c.__dict__
+{% endhighlight %}
+
+# Abstraction
+## Encapsulation
+## Hiding
 # Inheritance
