@@ -93,6 +93,62 @@ if __name__ == "__main__":
 {% endhighlight %}
 
 # Abstraction
+Data Abstraction is a broad term which is the culmination of 2 principles. On the one hand, Encapsulation which basically consist in encapsulating parameters and their respective methods. While on the other hand, Data Hiding occurs to prevent that parameters can't be changed if required.
 ## Encapsulation
+Encapsulation in the O.O.P. world is synonym with getters and setters methods.
+
+{% highlight python %}
+class Account:
+    def __init__(self):
+        self.username = None
+        self.pwd = None
+
+    def set_id(self,username):
+        self.username = username
+
+    def set_pwd(self,pwd):
+        self.pwd = pwd
+
+
+if __name__ == "__main__":
+  acc = Account()
+  print(acc.username)
+  acc.username = "Lulu"
+  print(acc.username)
+{% endhighlight %}
+
+Above an example of using setters and getters method. As you can see, it's still possible to change the parameters with the *.* accessor. Primarily, this can cause security issues. Secondly, this results that their are at least 2 ways of instantation which is highly unpythonic.
+
+This is solved by using private attributes which brings us nicely to the next topic.
+
 ## Hiding
+By using the prefix *__* in front of an attribute, we declare that this attribute is private. Concretely, this private attribute can only be used inside the Class itself. Indeed, the attribute is invisible and inaccessible from the external realm and can only be accessed/modified by methods which resides in the class themselves.
+
+{% highlight python %}
+class Account:
+    def __init__(self):
+        self.username = None
+        self.__pwd = None
+
+    def set_id(self,username):
+        self.username = username
+
+    def set_pwd(self,pwd):
+        self.__pwd = pwd
+
+
+if __name__ == "__main__":
+  acc = Account()
+  print(acc.username)
+  acc.username = "Lulu"
+  print(acc.username)
+  acc.set_pwd("uncrackable")
+  acc.__dict__
+  print(acc.pwd)
+{% endhighlight %}
+
+Interestingly, the last print-statement in the code above may result in your loss of faith in this world and I thus highly encourage you to try it out.
+
+There is also the *_* prefix which declares a protected attribute. This is used to tell programmers to touch this aatribute only if a subclass is created. This will become clear later on but first we need to explain the concept of Inheritance...
+
 # Inheritance
