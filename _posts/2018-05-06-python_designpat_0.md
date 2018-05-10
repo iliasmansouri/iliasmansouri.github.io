@@ -109,7 +109,6 @@ class Account:
     def set_pwd(self,pwd):
         self.pwd = pwd
 
-
 if __name__ == "__main__":
   acc = Account()
   print(acc.username)
@@ -136,7 +135,6 @@ class Account:
     def set_pwd(self,pwd):
         self.__pwd = pwd
 
-
 if __name__ == "__main__":
   acc = Account()
   print(acc.username)
@@ -152,3 +150,55 @@ Interestingly, the last print-statement in the code above may result in your los
 There is also the *_* prefix which declares a protected attribute. This is used to tell programmers to touch this aatribute only if a subclass is created. This will become clear later on but first we need to explain the concept of Inheritance...
 
 # Inheritance
+Inheritance can be easily explained as an *is-a* relationship: 'An employee is a human','A spider is an insect', 'Pizza is a food', etc. Below, you find a basic example of the Inheritance concept:
+
+{% highlight python %}
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+
+class Cheetah(Animal):
+    def __init__(self,name,diet):
+        Animal.__init__(self,name)
+        self.diet = diet
+
+    def getDiet(self):
+        return self.getName() + "'s diet is: " + self.diet
+
+class Pigeon(Animal):
+    def __init__(self,name,sound):
+        super().__init__(name)
+        self.sound = sound
+
+    def getSound(self):
+        return self.sound
+
+class Fish(Animal):
+    def __init__(self,name,movement):
+        super(Fish,self).__init__(name)
+        self.movement = movement
+
+    def getMovement(self):
+        return self.movement
+
+    def getName(self):
+        return self.name + " is a fish"
+
+ani = Animal("myAnimal")
+c = Cheetah("Petite Kitty","Carnivore")
+p = Pigeon("Birdie","Roekoeee")
+f = Fish("Nemo","Just keeps swimming")
+
+ani.getName()
+c.getName()
+c.getDiet()
+p.getSound()
+p.getName()
+f.getName()
+f.getMovement()
+{% endhighlight %}
+
+As you see, a sub class gets its base class as input. Afterwards, we observe 3 ways to initialize the Animal superclass. In the Fish class we also see how to override a method. This is useful as you can define a superclass with default methods as behaviour and depending on the subclasses can modify/override specific behaviours. As we will in the next blog, this is a powerful tool in Design Patterns concepts.
