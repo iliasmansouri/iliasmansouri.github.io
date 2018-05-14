@@ -54,4 +54,4 @@ s = mySingleton()
 print(s) #<__main__.mySingleton object at 0x7f6524add198>
 s2 = mySingleton()
 print(s2) #<__main__.mySingleton object at 0x7f6524add198>
-{% highlight python %}
+{% endhighlight %}
