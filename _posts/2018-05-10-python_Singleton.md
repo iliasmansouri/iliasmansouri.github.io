@@ -1,6 +1,6 @@
 ---
 title: "Design Patterns with Python Part 1: The Singleton"
-date: 2018-05-06
+date: 2018-05-09
 tags: [Design Patterns]
 excerpt: "Python, Design Patterns, OOP"
 ---
