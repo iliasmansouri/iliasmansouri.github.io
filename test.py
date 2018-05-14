@@ -50,7 +50,7 @@ class Fish(Animal):
         return self.movement
 
     def getName(self):
-        return self.name + "is a fish"
+        return self.name + " is a fish"
 
 
 
@@ -67,6 +67,8 @@ p.getSound()
 p.getName()
 f.getName()
 f.getMovement()
+f.getName()
+
 if __name__ == "__main__":
   acc = Account()
   print(acc.username)
