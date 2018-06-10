@@ -101,3 +101,8 @@ print(b2.__dict__)
 b.y = 3
 print(b.__dict__)
 {% endhighlight %}
+
+Multiple references to the same Singleton can be created, this means that global variables can be accessed and/or changed from all over the place.
+
+That's it! Easy peasy lemon squeezy right? RIGHT???
+In the next chapter we will discuss one of the most used patterns, stay tuned.

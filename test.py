@@ -52,7 +52,137 @@ class Fish(Animal):
     def getName(self):
         return self.name + " is a fish"
 
+class mySingleton(object):
+    def __new__(singleClass):
+        if not hasattr(singleClass, 'instance'):
+            singleClass.instance = super(mySingleton,singleClass).__new__(singleClass)
+        return singleClass.instance
 
+class lazySingleton(object):
+    __instance = None
+    def __init__(self):
+        if not lazySingleton.__instance:
+            print("Calling init method")
+        else:
+            print("Instance already present")
+    @classmethod
+    def getInstance(singleClass):
+        if not singleClass.__instance:
+            singleClass.__instance = lazySingleton()
+        return singleClass.__instance
+
+class Borg:
+    __borg_state = {"x":"1"}
+    def __init__(self):
+        self.__dict__ = self.__borg_state
+        pass
+
+b = Borg()
+print(b.__dict__)
+
+b2 = Borg()
+print(b2.__dict__)
+b.y = 3
+print(b.__dict__)
+
+
+from abc import ABCMeta, abstractmethod
+
+class Dog(metaclass = ABCMeta):
+    @abstractmethod
+    def race_name(self):
+        pass
+
+class Dachshund(Dog):
+    def race_name(self):
+        print("Dachshund")
+
+class Labrador(Dog):
+    def race_name(self):
+        print("Labrador")
+
+doggo = Dachshund()
+doggo.race_name()
+
+labbie = Labrador()
+labbie.race_name()
+
+
+
+from abc import ABCMeta, abstractmethod
+
+class Part(metaclass=ABCMeta):
+    @abstractmethod
+    def description(self):
+        pass
+
+class Head(Part):
+    def description(self):
+        print("This is the cyborg's head")
+
+class Torso(Part):
+    def description(self):
+        print("This is the cyborg's torso")
+
+class Legs(Part):
+    def description(self):
+        print("This is the cyborg's legs")
+
+class Arms(Part):
+    def description(self):
+        print("This is the cyborg's arms")
+
+class Wheels(Part):
+    def description(self):
+        print("This is the cyborg's wheels")
+
+class Thruster(Part):
+    def description(self):
+        print("This is the cyborg's thruster")
+
+class Borg(metaclass=ABCMeta):
+    def __init__(self):
+        self.parts = []
+        self.createBorg()
+    @abstractmethod
+    def createBorg(self):
+        pass
+    def getParts(self):
+        return self.parts
+    def addPart(self,part):
+        self.parts.append(part)
+
+class defaultBorg(Borg):
+    def createBorg(self):
+        self.addPart(Head())
+        self.addPart(Torso())
+        self.addPart(Legs())
+        self.addPart(Arms())
+
+class airBorg(Borg):
+    def createBorg(self):
+        self.addPart(Head())
+        self.addPart(Torso())
+        self.addPart(Thruster())
+
+humanoid = defaultBorg()
+humanoid.getParts()
+
+flyer = airBorg()
+flyer.getParts()
+
+
+s = lazySingleton()
+s
+
+s.getInstance()
+s2 = lazySingleton()
+s3 = lazySingleton()
+
+s = mySingleton()
+print(s)
+s2 = mySingleton()
+print(s2)
 
 ani = Animal("myAnimal")
 c = Cheetah("Petite Kitty","Carnivore")
