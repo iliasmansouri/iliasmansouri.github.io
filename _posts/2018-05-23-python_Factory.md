@@ -4,6 +4,7 @@ date: 2018-05-23
 tags: [Design Patterns]
 excerpt: "Python, Design Patterns, OOP"
 ---
+
 # Enter the Factory
 A factory creates objects. Yes I know, mindblowing stuff. Furthermore, we can comfortably say that a factory creates different type of objects but in the greater scheme of life those objects are similar in nature. Succinctly, a factory create objects of another type. Meaning, factory cannot create a factory.
 
